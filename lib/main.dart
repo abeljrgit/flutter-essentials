@@ -18,38 +18,47 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Awesome App"),
       ),
-      body: Container(
-        height: 100,
-        color: Colors.teal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          // mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.red,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          color: Colors.teal,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Abel Lugtu"),
+              accountEmail: Text("abel@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/73368957?v=4"),
+              ),
             ),
-            Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.yellow,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Abel Lugtu"),
+              subtitle: Text("Developer"),
+              trailing: Icon(Icons.edit),
+              onTap: () {},
             ),
-            Container(
-              padding: EdgeInsets.all(8),
-              color: Colors.green,
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("abel@gmail.com"),
+              trailing: Icon(Icons.edit),
             ),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+        // mini: true,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
